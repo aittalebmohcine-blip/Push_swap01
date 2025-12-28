@@ -1,4 +1,5 @@
 #include <limits.h>
+#include "libpushswap.h"
 
 //this file is for checking whether a token is valid
 //meaning, is it a vlid int representation
