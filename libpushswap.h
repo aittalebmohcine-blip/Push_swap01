@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 //functions from tokenize.c file
+int	ft_isspace(char c);
 int	arg_is_valid(char *arg);
 char *ft_strcat(char *dest, const char *src);
 char	*group_args(size_t size, int ac, char **av);
@@ -23,6 +24,6 @@ int	*tokens_to_int_and_free(char **tokens);
 int	has_duplicates(int *arr, int size);
 
 //functions from push_swap.c file
-void	on_error();
+void	error_exit(void);
 
 #endif
