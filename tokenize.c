@@ -1,6 +1,6 @@
 #include "libpushswap.h"
-#include <string.h>
 #include "libft/libft.h"
+#include <string.h>
 #include <stdlib.h>
 
 // this file is all about making the args into tokens 
@@ -35,7 +35,7 @@ int	arg_is_valid(char *arg)
 		i++;
 	if (arg[i])
 		return(0);
-	return(ft_strlen(arg));
+	return(i);
 }
 
 //a helper to concatinate args
@@ -86,7 +86,7 @@ char	*group_args(size_t size, int ac, char **av)
 //the main func of this file
 //splits the grouped args and return an array of tokens
 //in case of an eroor it returns null
-char	**tokenizer(int ac, char **av)
+char	**tokenize(int ac, char **av)
 {
 	size_t	i;
 	size_t	size;
@@ -103,7 +103,7 @@ char	**tokenizer(int ac, char **av)
 		i++;
 	}
 	args_grouped = group_args(size, ac, av);
-	tokens = ft_split(args_grouped, ' ');
+	tokens = ft_spaces_split(args_grouped);
 	free(args_grouped);
 	return(tokens);
 }
