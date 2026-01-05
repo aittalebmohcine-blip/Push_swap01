@@ -1,31 +1,45 @@
-NAME = push_swap
+NAME        = push_swap
 
-SRC = push_swap.c check_dup.c   set_tokens_orexit.c  tokenize.c   utils.c ft_spaces_split.c stack_hasdup_exit.c  tokens_to_stack_free.c  validate_tokens.c
-OBJ = $(SRC:.c=.o)
+CC          = cc
+CFLAGS      = -Wall -Wextra -Werror
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+LIBFT_DIR   = libft
+LIBFT       = $(LIBFT_DIR)/libft.a
 
-LIBFT = libft/libft.a
+INCLUDES    = -I. -I$(LIBFT_DIR)
+
+SRCS        = push_swap.c \
+              ft_spaces_split.c \
+              set_stacka_orexit.c \
+              set_tokens_orexit.c \
+              stack_hasdup_exit.c \
+              tokenize.c \
+              tokens_to_stack_free.c \
+              utils.c \
+              validate_tokens.c
+
+OBJS        = $(SRCS:.c=.o)
+
+# -------------------------------- RULES ------------------------------------ #
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(LIBFT) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-	make -C libft
+	$(MAKE) -C $(LIBFT_DIR)
+
+%.o: %.c libpushswap.h
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
-	make -C libft clean
+	rm -f $(OBJS)
+	$(MAKE) -C $(LIBFT_DIR) clean
 
 fclean: clean
 	rm -f $(NAME)
-	make -C libft fclean
+	$(MAKE) -C $(LIBFT_DIR) fclean
 
 re: fclean all
 

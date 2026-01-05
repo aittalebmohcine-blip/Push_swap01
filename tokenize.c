@@ -88,7 +88,7 @@ char	*group_args(size_t size, int ac, char **av)
 //in case of an eroor it returns null
 char	**tokenize(int ac, char **av)
 {
-	size_t	i;
+	int	i;
 	size_t	size;
 	char	*args_grouped;
 	char	**tokens;
