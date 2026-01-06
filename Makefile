@@ -16,7 +16,12 @@ SRCS        = push_swap.c \
               tokenize.c \
               tokens_to_stack_free.c \
               utils.c \
-              validate_tokens.c
+              validate_tokens.c \
+              stack_is_sorted_exit.c \
+              swap_utils.c\
+              push.c\
+							rotate.c\
+							reverse_rotate.c\
 
 OBJS        = $(SRCS:.c=.o)
 

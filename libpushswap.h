@@ -4,6 +4,8 @@
 # include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
+/////////////////////////////////////
+#include <stdio.h>
 
 //node structure
 typedef struct s_node
@@ -19,6 +21,39 @@ typedef struct s_stack
 	t_node	*top;
 	int	size;
 }	t_stack;
+
+// reverse_rotate.c
+// rra
+void	reverse_rotate_a(t_stack *a);
+// rrb
+void	reverse_rotate_b(t_stack *b);
+// rrr
+void	reverse_rotate_a_b(t_stack *a, t_stack *b);
+
+// rotate.c
+// ra
+void	rotate_a(t_stack *a);
+// rb
+void	rotate_b(t_stack *b);
+// rr
+void	rotate_a_b(t_stack *a, t_stack *b);
+
+// push.c
+// pb
+void	push_a_to_b(t_stack *stack_a, t_stack *stack_b);
+// pa
+void	push_b_to_a(t_stack *stack_a, t_stack *stack_b);
+
+// from swap.c
+// sa
+void swap_a(t_stack *stack_a);
+// sb
+void swap_b(t_stack *stack_b);
+// ss
+void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
+
+// stack_is_sorted_exit.c
+void	stack_is_sorted_exit(t_stack *stack);
 
 // file : tokens_to_stack_free.c
 t_stack	*tokens_to_stack_free(char **tokens);
