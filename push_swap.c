@@ -16,12 +16,13 @@ void	print_stack(t_stack *stack)
 	tmp = stack->top;
   if (!tmp)
     return;
-	while (tmp->next)
+	while (tmp)
 	{
-		printf("%d\n", tmp->value);
+		printf("value : %d\n", tmp->value);
+		printf("index : %d\n", tmp->index);
+		printf("-------------------\n");
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->value);
 }
 ///////////////////////////////////////////
 
@@ -38,6 +39,23 @@ int	main(int ac, char **av)
 	stack_hasdup_exit(stack_a);
 	stack_is_sorted_exit(stack_a);
 	stack_b = init_stack();
+
+////////////////////////////
+/*
+	int	*arr;
+	int	i = 0;
+	arr = stack_to_arr(stack_a);
+	while (i < stack_a->size)
+		printf("%d\n", arr[i++]);
+	bubble_sort(arr, stack_a->size);
+	i = 0;
+	while (i < stack_a->size)
+		printf("--%d\n", arr[i++]);
+	exit (0);
+*/
+/////////////////////////////
+	sorting_algo(stack_a, stack_b);
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return 0;
