@@ -12,15 +12,12 @@ void	print_stack(t_stack *stack)
 
 	if (!stack)
 		return;
-	printf("size : %d\n", stack->size);
 	tmp = stack->top;
   if (!tmp)
     return;
 	while (tmp)
 	{
-		printf("value : %d\n", tmp->value);
-		printf("index : %d\n", tmp->index);
-		printf("-------------------\n");
+		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
 }
@@ -54,8 +51,15 @@ int	main(int ac, char **av)
 	exit (0);
 */
 /////////////////////////////
+	printf("-------------------\n");
+  print_stack(stack_a);
+	printf("-------------------\n");
+
 	sorting_algo(stack_a, stack_b);
-	print_stack(stack_a);
+
+	printf("-------------------\n");
+  print_stack(stack_a);
+	printf("-------------------\n");
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return 0;

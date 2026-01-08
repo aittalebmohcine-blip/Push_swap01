@@ -22,11 +22,17 @@ typedef struct s_stack
 	int	size;
 }	t_stack;
 
-/////////////////////////
+//sort_less_than_6.c
+void	sort_2(t_stack *stack);
+void	sort_3(t_stack *a);
+void	sort_4(t_stack *a, t_stack *b);
+void	sort_5(t_stack *a, t_stack *b);
+
+//indexing.c
+int	indexing(t_stack *a);
+
 //sorting_algo.c
 void	sorting_algo(t_stack *a, t_stack *b);
-//int	*stack_to_arr(t_stack *stack);
-//void	bubble_sort(int *arr, int size);
 
 // reverse_rotate.c
 // rra

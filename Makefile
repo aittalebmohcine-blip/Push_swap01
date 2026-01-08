@@ -23,6 +23,8 @@ SRCS        = push_swap.c \
 							rotate.c\
 							reverse_rotate.c\
 							sorting_algo.c\
+							indexing.c\
+							sort_less_than_6.c\
 
 OBJS        = $(SRCS:.c=.o)
 
