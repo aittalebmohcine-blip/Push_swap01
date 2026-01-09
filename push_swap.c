@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "libpushswap.h"
 
-///////////////////////////////////////////
+//////////////////////////////////////////
 #include <stdio.h>
 void	print_stack(t_stack *stack)
 {
@@ -21,7 +21,7 @@ void	print_stack(t_stack *stack)
 		tmp = tmp->next;
 	}
 }
-///////////////////////////////////////////
+  ///////////////////////////////////////////
 
 int	main(int ac, char **av)
 {
@@ -51,15 +51,17 @@ int	main(int ac, char **av)
 	exit (0);
 */
 /////////////////////////////
-	printf("-------------------\n");
-  print_stack(stack_a);
-	printf("-------------------\n");
+
+	//printf("-------------------\n");
+  //print_stack(stack_a);
+	//printf("-------------------\n");
 
 	sorting_algo(stack_a, stack_b);
 
-	printf("-------------------\n");
-  print_stack(stack_a);
-	printf("-------------------\n");
+	//printf("-------------------\n");
+  //print_stack(stack_a);
+	//printf("-------------------\n");
+
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return 0;
