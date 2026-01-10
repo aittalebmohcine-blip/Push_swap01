@@ -22,6 +22,12 @@ typedef struct s_stack
 	int	size;
 }	t_stack;
 
+//push_chunks_to_b.c
+void	push_chunks_to_b(t_stack *a, t_stack *b);
+
+//push_back_to_a.c
+void	push_back_to_a(t_stack *a, t_stack *b);
+
 //sort_less_than_6.c
 void	sort_2(t_stack *stack);
 void	sort_3(t_stack *a);

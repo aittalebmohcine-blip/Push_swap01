@@ -10,7 +10,6 @@ INCLUDES    = -I. -I$(LIBFT_DIR)
 
 SRCS        = push_swap.c \
               ft_spaces_split.c \
-              set_stacka_orexit.c \
               set_tokens_orexit.c \
               stack_hasdup_exit.c \
               tokenize.c \
@@ -20,15 +19,16 @@ SRCS        = push_swap.c \
               stack_is_sorted_exit.c \
               swap_utils.c\
               push.c\
-							rotate.c\
-							reverse_rotate.c\
-							sorting_algo.c\
-							indexing.c\
-							sort_less_than_6.c\
+              rotate.c\
+              reverse_rotate.c\
+              sorting_algo.c\
+              indexing.c\
+              sort_less_than_6.c\
+              push_chunks_to_b.c\
+              push_back_to_a.c\
 
 OBJS        = $(SRCS:.c=.o)
 
-# -------------------------------- RULES ------------------------------------ #
 
 all: $(NAME)
 
