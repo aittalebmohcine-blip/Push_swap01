@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack_is_sorted_exit.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:32:12 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:32:14 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libpushswap.h"
 
 void	stack_is_sorted_exit(t_stack *stack)
@@ -11,10 +23,10 @@ void	stack_is_sorted_exit(t_stack *stack)
 	{
 		if (tmp->value < tmp->next->value)
 			tmp = tmp->next;
-		else 
-				break;
+		else
+			break ;
 	}
-	if(!tmp->next)
+	if (!tmp->next)
 	{
 		free_stack(&stack);
 		exit(1);

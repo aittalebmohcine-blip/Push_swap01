@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   tokens_to_stack_free.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:32:40 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:32:42 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libpushswap.h"
-#include "libft/libft.h"
 
 void	stack_add_back(t_stack	*stack, t_node *new)
 {
@@ -33,7 +44,7 @@ t_node	*new_node(int content)
 t_stack	*tokens_to_stack_free(char **tokens)
 {
 	t_stack	*stack;
-	int	i;
+	int		i;
 	t_node	*node;
 
 	stack = init_stack();
@@ -46,7 +57,6 @@ t_stack	*tokens_to_stack_free(char **tokens)
 		if (!node)
 		{
 			free_stack(&stack);
-			//free(stack);
 			free_tokens(tokens);
 			return (NULL);
 		}

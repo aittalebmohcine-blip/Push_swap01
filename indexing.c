@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   indexing.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:21:37 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:21:40 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libpushswap.h"
 
 int	*stack_to_arr(t_stack *stack)
 {
-	int	*arr;
-	int	i;
+	int		*arr;
+	int		i;
 	t_node	*tmp;
 
 	arr = malloc(stack->size * sizeof(int));
@@ -46,8 +58,8 @@ void	bubble_sort(int *arr, int size)
 
 int	indexing(t_stack *a)
 {
-	int	i;
-	int	*arr;
+	int		i;
+	int		*arr;
 	t_node	*tmp;
 
 	if (!a || !a->top)

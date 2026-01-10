@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_less_than_6.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:31:57 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:32:00 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libpushswap.h"
 
 void	sort_2(t_stack *stack)
@@ -49,9 +61,9 @@ void	sort_4(t_stack *a, t_stack *b)
 	forth = a->top->next->next->next->index;
 	if (first < second && second < third && third < forth)
 		return ;
-  else if (second == b->size)
+	else if (second == b->size)
 		swap_a(a);
-  else if (third == b->size)
+	else if (third == b->size)
 	{
 		reverse_rotate_a(a);
 		reverse_rotate_a(a);

@@ -1,101 +1,102 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libpushswap.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:22:34 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:22:36 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBPUSHSWAP_H
 # define LIBPUSHSWAP_H
 
 # include <stddef.h>
-#include <stdlib.h>
-#include <unistd.h>
-/////////////////////////////////////
-#include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
+# include "libft/libft.h"
 
-//node structure
+/* node structure */
 typedef struct s_node
 {
-	int	value;
-	int	index;
+	int				value;
+	int				index;
 	struct s_node	*next;
 }	t_node;
 
-//stack structure
+/* stack structure */
 typedef struct s_stack
 {
 	t_node	*top;
-	int	size;
+	int		size;
 }	t_stack;
 
-//push_chunks_to_b.c
+/* push_chunks_to_b.c */
 void	push_chunks_to_b(t_stack *a, t_stack *b);
 
-//push_back_to_a.c
+/* push_back_to_a.c */
 void	push_back_to_a(t_stack *a, t_stack *b);
 
-//sort_less_than_6.c
+/* sort_less_than_6.c */
 void	sort_2(t_stack *stack);
 void	sort_3(t_stack *a);
 void	sort_4(t_stack *a, t_stack *b);
 void	sort_5(t_stack *a, t_stack *b);
 
-//indexing.c
-int	indexing(t_stack *a);
+/* indexing.c */
+int		indexing(t_stack *a);
 
-//sorting_algo.c
+/* sorting_algo.c */
 void	sorting_algo(t_stack *a, t_stack *b);
 
-// reverse_rotate.c
-// rra
+/* reverse_rotate.c */
 void	reverse_rotate_a(t_stack *a);
-// rrb
 void	reverse_rotate_b(t_stack *b);
-// rrr
 void	reverse_rotate_a_b(t_stack *a, t_stack *b);
 
-// rotate.c
-// ra
+/* rotate.c */
 void	rotate_a(t_stack *a);
-// rb
 void	rotate_b(t_stack *b);
-// rr
 void	rotate_a_b(t_stack *a, t_stack *b);
 
-// push.c
-// pb
+/* push.c */
 void	push_a_to_b(t_stack *stack_a, t_stack *stack_b);
-// pa
 void	push_b_to_a(t_stack *stack_a, t_stack *stack_b);
 
-// from swap.c
-// sa
-void swap_a(t_stack *stack_a);
-// sb
-void swap_b(t_stack *stack_b);
-// ss
+/* swap.c */
+void	swap_a(t_stack *stack_a);
+void	swap_b(t_stack *stack_b);
 void	swap_a_b(t_stack *stack_a, t_stack *stack_b);
 
-// stack_is_sorted_exit.c
+/* stack_is_sorted_exit.c */
 void	stack_is_sorted_exit(t_stack *stack);
 
-// file : tokens_to_stack_free.c
+/* tokens_to_stack_free.c */
 t_stack	*tokens_to_stack_free(char **tokens);
 
-// file : set_tokens_orexit.c
+/* set_tokens_orexit.c */
 char	**set_tokens_orexit(int ac, char **av);
 void	free_tokens(char **tokens);
 
-//from utils.c
+/* utils.c */
 void	error_exit(void);
 t_stack	*init_stack(void);
 void	free_stack(t_stack **stack);
 
-//functions from tokenize.c file
+/* tokenize.c */
 char	**tokenize(int ac, char **av);
-int	ft_isspace(char c);
+int		ft_isspace(char c);
 
-//functions from validate_tokens.c file
-int	validate_tokens(char **tokens);
+/* validate_tokens.c */
+int		validate_tokens(char **tokens);
 
-//functions from stack_hasdup_exit.c file
+/* stack_hasdup_exit.c */
 void	stack_hasdup_exit(t_stack *stack);
 
-//from ft_spaces_split.c
+/* ft_spaces_split.c */
 char	**ft_spaces_split(char const *s);
 
 #endif

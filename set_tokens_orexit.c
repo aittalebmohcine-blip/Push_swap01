@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   set_tokens_orexit.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mait-tal <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 11:31:25 by mait-tal          #+#    #+#             */
+/*   Updated: 2026/01/10 11:31:27 by mait-tal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libpushswap.h"
 
-void free_tokens(char **tokens)
+void	free_tokens(char **tokens)
 {
-    int i = 0;
+	int	i;
 
-    if (!tokens)
-        return;
-    while (tokens[i])
-        free(tokens[i++]);
-    free(tokens);
+	if (!tokens)
+		return ;
+	i = 0;
+	while (tokens[i])
+		free(tokens[i++]);
+	free(tokens);
 }
 
 char	**set_tokens_orexit(int ac, char **av)
@@ -20,13 +33,7 @@ char	**set_tokens_orexit(int ac, char **av)
 	{
 		if (tokens)
 			free_tokens(tokens);
-    error_exit();
-	}
-	//stack_a = tokens_to_int_and_free(tokens);
-	/*if(has_duplicates(stack_a, count))//free befor exit in case of dups
-	{
-		free(stack_a);
 		error_exit();
-	}*/
-	return(tokens);
+	}
+	return (tokens);
 }
